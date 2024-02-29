@@ -1,0 +1,18 @@
+TextWidget: # ルートに追加
+
+<TextWidget>:
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.size
+
+
+        Image:
+            source: './image/home.png'
+            allow_stretch: True
+
+        Button:
+            id: button1
+			size_hint_y:0.1
+            text: "Start App"
+            font_size: 45
+            on_press: root.buttonClicked()
