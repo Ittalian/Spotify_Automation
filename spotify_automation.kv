@@ -5,14 +5,19 @@ TextWidget: # ルートに追加
         orientation: 'vertical'
         size: root.size
 
-
         Image:
             source: './image/home.png'
             allow_stretch: True
 
+        Label:
+            id: app_state
+            size_hint_y:0.1
+            font_size: 40
+            text: root.text
+
         Button:
-            id: button1
+            id: app_button
 			size_hint_y:0.1
             text: "Start App"
-            font_size: 40
-            on_press: root.buttonClicked()
+            font_size: 30
+            on_press: root.check_app_state()
