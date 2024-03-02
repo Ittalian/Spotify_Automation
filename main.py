@@ -3,8 +3,9 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.properties import StringProperty, BooleanProperty
-import requests
+
 import json
+import requests
 
 # アクセストークンを取得する関数
 def get_access_token():
@@ -37,9 +38,7 @@ def play_music(index):
         'position_ms': 0,
     }
 
-    response = requests.put('https://api.spotify.com/v1/me/player/play?device_id=4bb8a462453c69392da0985c0084e61c96dadbc7', headers=headers, json=json_data)
-
-    return response
+    requests.put('https://api.spotify.com/v1/me/player/play?device_id=4bb8a462453c69392da0985c0084e61c96dadbc7', headers=headers, json=json_data)
 
 class TextWidget(Widget):
     text = StringProperty()    # プロパティの追加
