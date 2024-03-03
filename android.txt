@@ -1,2 +1,3 @@
 title=Spotify_Automation
 author=Itta Yosimatsu
+orientation = portrait
