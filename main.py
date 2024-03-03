@@ -38,7 +38,9 @@ def play_music(index):
         'position_ms': 0,
     }
 
-    requests.put('https://api.spotify.com/v1/me/player/play?device_id=4bb8a462453c69392da0985c0084e61c96dadbc7', headers=headers, json=json_data)
+    responce = requests.put('https://api.spotify.com/v1/me/player/play?device_id=4bb8a462453c69392da0985c0084e61c96dadbc7', headers=headers, json=json_data)
+
+    return responce.text
 
 class TextWidget(Widget):
     text = StringProperty()    # プロパティの追加
@@ -51,8 +53,7 @@ class TextWidget(Widget):
     def check_app_state(self):      # ボタンをクリック時
         self.is_starting = not self.is_starting
         if self.is_starting:
-            self.text = "Starting App"
-            play_music(3)
+            self.text = play_music(3)
         else:
             self.text = "Stopping App"
 
